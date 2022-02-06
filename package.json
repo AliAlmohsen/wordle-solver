@@ -1,11 +1,10 @@
 {
-  "name": "wordle",
+  "name": "wordle-solver",
   "version": "1.0.0",
-  "description": "",
+  "description": "An automated Wordle solver",
   "main": "index.js",
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ali Almohsen",
   "dependencies": {
     "chalk": "^2.4.1"
   }
