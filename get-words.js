@@ -1,4 +1,4 @@
-const fs = require("fs");
+import fs from "fs";
 
 function getWords() {
   return JSON.parse(
@@ -6,7 +6,7 @@ function getWords() {
   );
 }
 
-const words = getWords();
+export const words = getWords();
 
 function getLetterFrequencies(withVowels) {
   const letters = {
@@ -62,7 +62,7 @@ function getLetterFrequencies(withVowels) {
   return { letterFrequenciesMap: letters, letterFrequenciesArray: arr };
 }
 
-const { letterFrequenciesMap, letterFrequenciesArray } =
+export const { letterFrequenciesMap, letterFrequenciesArray } =
   getLetterFrequencies(false);
 
 function getWordScore(word) {
@@ -83,9 +83,9 @@ function sortWordsByScore() {
   return words.sort((a, b) => getWordScore(b) - getWordScore(a));
 }
 
-const wordsByScore = sortWordsByScore();
+export const wordsByScore = sortWordsByScore();
 
-function getBestWord(guesses) {
+export function getBestWord(guesses) {
   return wordsByScore.find((word) => {
     for (let guessIndex = 0; guessIndex < guesses.length; guessIndex++) {
       const guess = guesses[guessIndex];
@@ -106,11 +106,3 @@ function getBestWord(guesses) {
     return true;
   });
 }
-
-module.exports = {
-  words,
-  wordsByScore,
-  letterFrequenciesMap,
-  letterFrequenciesArray,
-  getBestWord,
-};

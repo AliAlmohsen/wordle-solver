@@ -1,6 +1,6 @@
-const chalk = require("chalk");
+import chalk from "chalk";
 
-function chalkConsole(guess) {
+export function chalkConsole(guess) {
   let result = "";
   guess.forEach((guessedLetter) => {
     switch (guessedLetter.result) {
@@ -25,7 +25,7 @@ function chalkConsole(guess) {
   console.log(result);
 }
 
-function emojiConsole(guess) {
+export function emojiConsole(guess) {
   let result = "";
   guess.forEach((guessedLetter) => {
     switch (guessedLetter.result) {
@@ -45,5 +45,3 @@ function emojiConsole(guess) {
   });
   console.log(result);
 }
-
-module.exports = { chalkConsole, emojiConsole };

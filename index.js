@@ -1,6 +1,6 @@
-const { emojiConsole, chalkConsole } = require("./console-result");
-const { checkWord } = require("./check-word");
-const { getBestWord } = require("./get-words");
+import { emojiConsole, chalkConsole } from "./console-result.js";
+import { checkWord } from "./check-word.js";
+import { getBestWord } from "./get-words.js";
 
 const correctWord = process.argv[2];
 

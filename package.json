@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "An automated Wordle solver",
   "main": "index.js",
+  "type": "module",
   "keywords": [],
   "author": "Ali Almohsen",
   "dependencies": {
-    "chalk": "^2.4.1"
+    "chalk": "^5.0.0"
   }
 }

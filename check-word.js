@@ -4,7 +4,7 @@ function compareLetters(guess, correct, correctWord) {
   return "b";
 }
 
-function checkWord(guess, correctWord) {
+export function checkWord(guess, correctWord) {
   const guessLetters = guess.split("");
   const correctLetters = correctWord.split("");
   const result = [];
@@ -22,7 +22,3 @@ function checkWord(guess, correctWord) {
 
   return result;
 }
-
-module.exports = {
-  checkWord,
-};
