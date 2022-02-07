@@ -10,34 +10,7 @@ function getWords() {
 export const words = getWords();
 
 function getLetterFrequencies(withVowels) {
-  const letters = {
-    a: 0,
-    b: 0,
-    c: 0,
-    d: 0,
-    e: 0,
-    f: 0,
-    g: 0,
-    h: 0,
-    i: 0,
-    j: 0,
-    k: 0,
-    l: 0,
-    m: 0,
-    n: 0,
-    o: 0,
-    p: 0,
-    q: 0,
-    r: 0,
-    s: 0,
-    t: 0,
-    u: 0,
-    v: 0,
-    w: 0,
-    x: 0,
-    y: 0,
-    z: 0,
-  };
+  const letters = {};
 
   words.forEach((word) => {
     word.split("").forEach((letter) => {
@@ -47,11 +20,11 @@ function getLetterFrequencies(withVowels) {
   });
 
   if (!withVowels) {
-    letters.a = 704;
-    letters.e = 705;
-    letters.i = 702;
-    letters.o = 703;
-    letters.u = 701;
+    letters.a /= 2;
+    letters.e /= 2;
+    letters.i /= 2;
+    letters.o /= 2;
+    letters.u /= 2;
   }
 
   const arr = Object.keys(letters)
@@ -72,8 +45,6 @@ function getWordScore(word) {
   letters.forEach((letter) => {
     score += letterFrequenciesMap[letter] ?? 0;
   });
-
-  if (letters[4] === "s") score -= 700;
 
   return score;
 }
