@@ -1,4 +1,4 @@
-import { Status } from "./constants.js";
+import { Status } from './constants.js';
 
 function compareLetters(guess, correct, correctWord) {
   if (guess === correct) return Status.Correct;
@@ -7,18 +7,14 @@ function compareLetters(guess, correct, correctWord) {
 }
 
 export function checkWord(guess, correctWord) {
-  const guessLetters = guess.split("");
-  const correctLetters = correctWord.split("");
+  const guessLetters = guess.split('');
+  const correctLetters = correctWord.split('');
   const result = [];
 
   for (let index = 0; index < guessLetters.length; index++) {
     result.push({
       letter: guessLetters[index],
-      result: compareLetters(
-        guessLetters[index],
-        correctLetters[index],
-        correctWord
-      ),
+      result: compareLetters(guessLetters[index], correctLetters[index], correctWord),
     });
   }
 
