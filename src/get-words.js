@@ -4,7 +4,7 @@ import path from 'path';
 import { Status } from './constants.js';
 
 function getWords() {
-  return JSON.parse(fs.readFileSync(path.join(process.cwd(), 'words.json'), 'utf8'));
+  return JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'words.json'), 'utf8'));
 }
 
 export const words = getWords();

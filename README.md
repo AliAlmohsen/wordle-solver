@@ -11,5 +11,5 @@ node install
 Then enter the correct word it should guess:
 
 ```terminal
-node index.js skill
+npm start skill
 ```
