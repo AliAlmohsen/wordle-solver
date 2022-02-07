@@ -11,22 +11,27 @@ export const words = getWords();
 
 function getLetterFrequencies(withVowels) {
   const letters = {
+    a: 0,
     b: 0,
     c: 0,
     d: 0,
+    e: 0,
     f: 0,
     g: 0,
     h: 0,
+    i: 0,
     j: 0,
     k: 0,
     l: 0,
     m: 0,
     n: 0,
+    o: 0,
     p: 0,
     q: 0,
     r: 0,
     s: 0,
     t: 0,
+    u: 0,
     v: 0,
     w: 0,
     x: 0,
@@ -34,17 +39,10 @@ function getLetterFrequencies(withVowels) {
     z: 0,
   };
 
-  if (withVowels) {
-    letters.a = 0;
-    letters.e = 0;
-    letters.i = 0;
-    letters.o = 0;
-    letters.u = 0;
-  }
-
   words.forEach((word) => {
     word.split("").forEach((letter) => {
       if (Object.keys(letters).includes(letter)) letters[letter]++;
+      else letters[letter] = 1;
     });
   });
 
