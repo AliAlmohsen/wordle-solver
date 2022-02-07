@@ -1,8 +1,9 @@
 import fs from "fs";
+import path from "path";
 
 function getWords() {
   return JSON.parse(
-    fs.readFileSync("/Users/alialmohsen/Code/wordle/words.json", "utf8")
+    fs.readFileSync(path.join(process.cwd(), "words.json"), "utf8")
   );
 }
 
