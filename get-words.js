@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 
+import { Status } from "./constants.js";
+
 function getWords() {
   return JSON.parse(
     fs.readFileSync(path.join(process.cwd(), "words.json"), "utf8")
@@ -63,12 +65,12 @@ export function getBestWord(guesses) {
       for (let letterIndex = 0; letterIndex < guess.length; letterIndex++) {
         const { letter, result } = guess[letterIndex];
 
-        if (result === "b" && word.includes(letter)) return false;
-        if (result === "y") {
+        if (result === Status.Absent && word.includes(letter)) return false;
+        if (result === Status.Present) {
           if (!word.includes(letter)) return false;
           if (word.split("")[letterIndex] === letter) return false;
         }
-        if (result === "g" && word.split("")[letterIndex] !== letter)
+        if (result === Status.Correct && word.split("")[letterIndex] !== letter)
           return false;
       }
     }

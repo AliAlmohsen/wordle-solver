@@ -1,18 +1,20 @@
 import chalk from "chalk";
 
+import { Status } from "./constants.js";
+
 export function chalkConsole(guess) {
   let result = "";
   guess.forEach((guessedLetter) => {
     switch (guessedLetter.result) {
-      case "g":
+      case Status.Correct:
         result += chalk.bgGreen(" " + guessedLetter.letter.toUpperCase() + " ");
         break;
-      case "b":
+      case Status.Absent:
         result += chalk.whiteBright.bgBlack(
           " " + guessedLetter.letter.toUpperCase() + " "
         );
         break;
-      case "y":
+      case Status.Present:
         result += chalk.bgYellow(
           " " + guessedLetter.letter.toUpperCase() + " "
         );
@@ -29,13 +31,13 @@ export function emojiConsole(guess) {
   let result = "";
   guess.forEach((guessedLetter) => {
     switch (guessedLetter.result) {
-      case "g":
+      case Status.Correct:
         result += "🟩 ";
         break;
-      case "b":
+      case Status.Absent:
         result += "⬜ ";
         break;
-      case "y":
+      case Status.Present:
         result += "🟨 ";
         break;
 

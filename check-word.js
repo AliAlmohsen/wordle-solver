@@ -1,7 +1,9 @@
+import { Status } from "./constants.js";
+
 function compareLetters(guess, correct, correctWord) {
-  if (guess === correct) return "g";
-  if (correctWord.includes(guess)) return "y";
-  return "b";
+  if (guess === correct) return Status.Correct;
+  if (correctWord.includes(guess)) return Status.Present;
+  return Status.Absent;
 }
 
 export function checkWord(guess, correctWord) {
